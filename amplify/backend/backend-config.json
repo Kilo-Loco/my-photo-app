@@ -1,0 +1,34 @@
+{
+	"auth": {
+		"myphotoapp5996848c": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"api": {
+		"myphotoapp": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "myphotoappapikey",
+							"apiKeyExpirationDays": 7
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"s3ba3ecf7f": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
